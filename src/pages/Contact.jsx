@@ -5,7 +5,13 @@ import {
   Button,
   Stack,
   Container,
+  IconButton,
 } from '@mui/material';
+
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import EmailIcon from '@mui/icons-material/Email';
 
 export default function Contacto() {
   const handleSubmit = async (e) => {
@@ -28,7 +34,7 @@ export default function Contacto() {
 
       const result = await res.json();
       alert(result.mensaje);
-      e.target.reset(); // limpia el formulario si fue exitoso
+      e.target.reset();
     } catch (err) {
       alert("Error al enviar el mensaje.");
     }
@@ -57,60 +63,25 @@ export default function Contacto() {
 
         <form onSubmit={handleSubmit}>
           <Stack spacing={3}>
-            <TextField
-              name="nombre"
-              label="Nombre"
-              variant="outlined"
-              sx={{
-                backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.25), transparent 70%)`,
-                backgroundColor: 'background.paper',
-                border: '1px solid rgba(0,191,255, 0.5)',
-                borderRadius: '15px'
-              }}
-              fullWidth
-              required
-            />
-            <TextField
-              name="email"
-              label="Email"
-              type="email"
-              variant="outlined"
-              sx={{
-                backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.25), transparent 70%)`,
-                backgroundColor: 'background.paper',
-                border: '1px solid rgba(0,191,255, 0.5)',
-                borderRadius: '15px'
-              }}
-              fullWidth
-              required
-            />
-            <TextField
-              name="empresa"
-              label="Empresa (opcional)"
-              variant="outlined"
-              sx={{
-                backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.25), transparent 70%)`,
-                backgroundColor: 'background.paper',
-                border: '1px solid rgba(0,191,255, 0.5)',
-                borderRadius: '15px'
-              }}
-              fullWidth
-            />
-            <TextField
-              name="mensaje"
-              label="Mensaje"
-              variant="outlined"
-              sx={{
-                backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.25), transparent 70%)`,
-                backgroundColor: 'background.paper',
-                border: '1px solid rgba(0,191,255, 0.5)',
-                borderRadius: '15px'
-              }}
-              fullWidth
-              required
-              multiline
-              rows={4}
-            />
+            {['nombre', 'email', 'empresa', 'mensaje'].map((field, i) => (
+              <TextField
+                key={field}
+                name={field}
+                label={field === 'empresa' ? 'Empresa (opcional)' : field.charAt(0).toUpperCase() + field.slice(1)}
+                type={field === 'email' ? 'email' : 'text'}
+                variant="outlined"
+                multiline={field === 'mensaje'}
+                rows={field === 'mensaje' ? 4 : 1}
+                required={field !== 'empresa'}
+                sx={{
+                  backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.25), transparent 70%)`,
+                  backgroundColor: 'background.paper',
+                  border: '1px solid rgba(0,191,255, 0.5)',
+                  borderRadius: '15px'
+                }}
+                fullWidth
+              />
+            ))}
 
             <Button
               type="submit"
@@ -128,6 +99,44 @@ export default function Contacto() {
             </Button>
           </Stack>
         </form>
+
+        {/* Redes sociales */}
+        <Stack direction="row" spacing={2} justifyContent="center" mt={6}>
+          <IconButton
+            component="a"
+            href="https://www.linkedin.com/company/tuempresa"
+            target="_blank"
+            rel="noopener"
+            sx={{ color: 'primary.main' }}
+          >
+            <LinkedInIcon />
+          </IconButton>
+          <IconButton
+            component="a"
+            href="https://www.instagram.com/tuempresa"
+            target="_blank"
+            rel="noopener"
+            sx={{ color: 'primary.main' }}
+          >
+            <InstagramIcon />
+          </IconButton>
+          <IconButton
+            component="a"
+            href="https://twitter.com/tuempresa"
+            target="_blank"
+            rel="noopener"
+            sx={{ color: 'primary.main' }}
+          >
+            <TwitterIcon />
+          </IconButton>
+          <IconButton
+            component="a"
+            href="mailto:contacto@tuempresa.com"
+            sx={{ color: 'primary.main' }}
+          >
+            <EmailIcon />
+          </IconButton>
+        </Stack>
       </Container>
     </Box>
   );

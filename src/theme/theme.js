@@ -20,13 +20,44 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "'Roboto', sans-serif",
+    fontFamily: 'Inter, sans-serif',
+    h1: {
+      fontFamily: 'Audiowide, sans-serif',
+      fontWeight: 400, // Audiowide solo tiene 1 peso
+    },
     h2: {
-      fontWeight: 700,
+      fontFamily: 'Audiowide, sans-serif',
+      fontWeight: 400,
+    },
+    h3: {
+      fontFamily: 'Audiowide, sans-serif',
+      fontWeight: 400,
     },
     h4: {
+      fontFamily: 'Audiowide, sans-serif',
+      fontWeight: 400,
+    },
+    h5: {
+      fontFamily: 'Audiowide, sans-serif',
+      fontWeight: 400,
+    },
+    h6: {
+      fontFamily: 'Audiowide, sans-serif',
+      fontWeight: 400,
+    },
+    body1: {
+      fontFamily: 'Inter, sans-serif',
+    },
+    body2: {
+      fontFamily: 'Inter, sans-serif',
+    },
+    button: {
+      fontFamily: 'Inter, sans-serif',
       fontWeight: 600,
     },
+  },
+  shape: {
+    borderRadius: 16,
   },
 });
 

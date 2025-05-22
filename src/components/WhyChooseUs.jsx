@@ -41,10 +41,34 @@ export default function PorQueElegirnos() {
 
   return (
     <Box sx={{ py: 8, px: 2, backgroundColor: "transparent", position: 'relative' }}>
-      <Typography variant="h4" align="center" fontWeight={700} mb={6}>
-        ¿Por qué elegirnos?
-      </Typography>
-
+      <Box display={"flex"}
+        flexDirection={"row"}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        <Typography
+          variant="h4"
+          align="center"
+          fontWeight={700}
+          mb={6}
+          mr={2}
+          color="text.secondary"
+        >
+          ¿Por qué
+        </Typography>
+        <Typography
+          variant="h4"
+          align="center"
+          fontWeight={700}
+          mb={6}
+          color="primary.main"
+        >
+          elegirnos
+        </Typography>
+        <Typography variant="h4" align="center" color="text.secondary" fontWeight={700} mb={6}>
+          ?
+        </Typography>
+      </Box>
       {/* Blur overlay */}
       {hoveredIndex !== null && (
         <Box

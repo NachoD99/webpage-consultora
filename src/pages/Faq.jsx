@@ -62,15 +62,12 @@ export default function Faq() {
                 <Typography variant="h4" fontWeight={700} align="center" mb={4}>
                     Preguntas Frecuentes
                 </Typography>
-
-                {/* 🔍 Buscador */}
                 <Box
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
                         backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.35), transparent 80%)`,
                         backgroundColor: 'background.paper',
-                        border: '1px solid rgba(0,191,255)',
                         px: 2,
                         py: 1,
                         borderRadius: 2,
@@ -101,7 +98,6 @@ export default function Faq() {
                                 sx={{
                                     backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.35), transparent 80%)`,
                                     backgroundColor: 'background.paper',
-                                    border: '1px solid rgba(0,191,255)',
                                     color: 'text.primary',
                                     mb: 2,
                                     borderRadius: 2,

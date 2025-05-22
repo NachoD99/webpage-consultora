@@ -15,17 +15,18 @@ export default function Hero() {
         color: 'text.primary',
       }}
     >
-      <Stack spacing={4} width="600px" sx={{ mx: 'auto', color: 'text.secondary' }} maxWidth="lg">
+      <Stack spacing={4} width="800px" sx={{ mx: 'auto', color: 'text.secondary' }} maxWidth="lg">
         <Typography
           variant="h1"
-          fontWeight={700}
+          fontWeight={500}
+           align="center"
           sx={{ fontSize: { xs: '2rem', md: '6rem' }, mb: 0 }}
         >
           Transformamos tu 
         </Typography>
         <Typography
           variant="h1"
-          fontWeight={700}
+          fontWeight={500}
           sx={{ fontSize: { xs: '2rem', md: '6rem' }, mt: 0, color: 'primary.main'}}
         >
           Industria
