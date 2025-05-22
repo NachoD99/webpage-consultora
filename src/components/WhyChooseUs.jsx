@@ -1,4 +1,5 @@
 // src/components/PorQueElegirnos.jsx
+import React, { useState } from 'react';
 import {
   Box,
   Typography,
@@ -36,17 +37,35 @@ const razones = [
 ];
 
 export default function PorQueElegirnos() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   return (
-    <Box sx={{ py: 8, px: 2, backgroundColor: "transparent" }}>
+    <Box sx={{ py: 8, px: 2, backgroundColor: "transparent", position: 'relative' }}>
       <Typography variant="h4" align="center" fontWeight={700} mb={6}>
         ¿Por qué elegirnos?
       </Typography>
+
+      {/* Blur overlay */}
+      {hoveredIndex !== null && (
+        <Box
+          sx={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backdropFilter: 'blur(6px)',
+            zIndex: 10,
+            pointerEvents: 'none',
+          }}
+        />
+      )}
 
       <Grid
         container
         spacing={4}
         justifyContent="center"
-        sx={{ px: { xs: 2, md: 6 } }}
+        sx={{ px: { xs: 2, md: 6 }, position: 'relative', zIndex: 20 }}
       >
         {razones.map((razon, index) => (
           <Grid
@@ -59,22 +78,27 @@ export default function PorQueElegirnos() {
               display: 'flex',
               justifyContent: 'center',
             }}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
             <Card
-              elevation={6}
+              elevation={hoveredIndex === index ? 12 : 6}
               sx={{
                 backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.35), transparent 80%)`,
                 backgroundColor: 'background.paper',
                 border: '1px solid rgba(0,191,255)',
                 color: 'text.primary',
                 width: '100%',
-                maxWidth: 300, // 👈 ancho fijo máximo por tarjeta
+                maxWidth: 300,
                 minHeight: 280,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
                 p: 3,
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                transform: hoveredIndex === index ? 'scale(1.35)' : 'scale(1)',
+                zIndex: hoveredIndex === index ? 100 : 20,
               }}
             >
               <Avatar
