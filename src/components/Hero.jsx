@@ -28,7 +28,7 @@ export default function Hero() {
         <Typography
           variant="h1"
           fontWeight={500}
-          sx={{ fontSize: { xs: '2rem', md: '6rem' }, mt: 0, color: 'primary.main'}}
+          sx={{ fontSize: { xs: '2rem', md: '6rem' }, mt: 0, background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}
         >
           {t("title2")}
         </Typography>

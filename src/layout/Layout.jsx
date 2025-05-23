@@ -43,6 +43,7 @@ export default function Layout({ children }) {
   const navItems = [
     { label: t('home'), to: `/${lng}` },
     { label: t('services'), to: `/${lng}/services` },
+    { label: t('aboutUs'), to: `/${lng}/aboutus` },
     { label: t('contact'), to: `/${lng}/contact` },
     { label: t('faq'), to: `/${lng}/faq` }
   ];
@@ -79,7 +80,7 @@ export default function Layout({ children }) {
         sx={{
           mt: isMobile ? 0 : '30px',
           mx: isMobile ? 0 : 'auto',
-          width: isMobile ? '100%' : '40%',
+          width: isMobile ? '100%' : '50%',
           borderRadius: isMobile ? 0 : '30px',
           backdropFilter: 'blur(10px)',
           backgroundImage: isMobile ? 0 : `radial-gradient(ellipse at top, rgba(0,191,255,0.25), transparent 70%)`,
@@ -98,6 +99,7 @@ export default function Layout({ children }) {
                 textDecoration: 'none',
                 fontWeight: 700,
                 fontSize: '1.25rem',
+                background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'
               }}
             >
               {t('title')}

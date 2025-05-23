@@ -53,7 +53,7 @@ export default function Servicios() {
           align="center"
           fontWeight={700}
           mb={6}
-          color="primary.main"
+          sx={{background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}
         >
           {t('title2')}
         </Typography>

@@ -51,6 +51,7 @@ console.log("Traducción nombre:", t("name"));
           fontWeight={700}
           align="center"
           gutterBottom
+          sx={{background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}
         >
           {t('title')}
         </Typography>
@@ -85,8 +86,6 @@ console.log("Traducción nombre:", t("name"));
                 fullWidth
               />
             ))}
-
-
 
             <Button
               type="submit"

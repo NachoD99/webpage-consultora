@@ -10,6 +10,7 @@ const theme = createTheme({
     },
     primary: {
       main: '#00bfff',
+      gradient: 'linear-gradient(to right, #00bfff 0%, #5c42ff 50%, #8a2be2 100%)',
     },
     secondary: {
       main: '#009acd',

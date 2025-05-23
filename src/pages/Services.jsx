@@ -42,9 +42,31 @@ export default function Services() {
   return (
     <Box sx={{ backgroundColor: 'transparent', py: 10 }}>
       <Container>
-        <Typography variant="h4" fontWeight={700} align="center" mb={6}>
-          {t('title')}
-        </Typography>
+        <Box display={"flex"}
+          flexDirection={"row"}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
+          <Typography
+            variant="h4"
+            align="center"
+            fontWeight={700}
+            mb={6}
+            mr={2}
+            color="text.secondary"
+          >
+            {t('title1')}
+          </Typography>
+          <Typography
+            variant="h4"
+            align="center"
+            fontWeight={700}
+            mb={6}
+            sx={{ background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+          >
+            {t('title2')}
+          </Typography>
+        </Box>
 
         <Timeline position="alternate">
           {servicios.map((servicio, index) => (

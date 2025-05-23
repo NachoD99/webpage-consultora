@@ -20,6 +20,8 @@ import servicespageEs from './languages/es/servicespage.json';
 import servicespageEn from './languages/en/servicespage.json';
 import footerEs from './languages/es/footer.json';
 import footerEn from './languages/en/footer.json';
+import aboutUsEs from './languages/es/aboutUs.json';
+import aboutUsEn from './languages/en/aboutUs.json';
 
 i18n
     .use(LanguageDetector)
@@ -37,6 +39,7 @@ i18n
                 whychooseus: whychooseusEs,
                 servicespage: servicespageEs,
                 footer: footerEs,
+                aboutUs: aboutUsEs,
             },
             en: {
                 layout: layoutEn,
@@ -48,6 +51,7 @@ i18n
                 whychooseus: whychooseusEn,
                 servicespage: servicespageEn,
                 footer: footerEn,
+                aboutUs: aboutUsEn,
             },
         },
         fallbackLng: 'es',

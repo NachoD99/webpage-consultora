@@ -55,7 +55,7 @@ export default function PorQueElegirnos() {
           align="center"
           fontWeight={700}
           mb={6}
-          color="primary.main"
+          sx={{background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}
         >
           {t('title_part2')}
         </Typography>

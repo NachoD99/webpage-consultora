@@ -1,0 +1,27 @@
+{
+  "title1": "About ",
+  "title2": "Us",
+  "description": "We are a consulting firm specialized in digital transformation and industrial innovation. We combine technical expertise with strategic vision to help you implement intelligent, scalable, and sustainable solutions in your operations.",
+  "missionTitle": "Our Mission",
+  "missionText": "To enhance industrial efficiency and sustainability through digitization, automation, and strategic use of data.",
+  "visionTitle": "Our Vision",
+  "visionText": "To be leaders in industrial innovation, building bridges between emerging technologies and our clients' production realities.",
+  "teamTitle": "Our Leadership Team",
+  "ceos": [
+    {
+      "name": "Valentina Ruiz",
+      "role": "Strategy CEO",
+      "bio": "Digital transformation expert with over 10 years of leadership in industrial innovation projects."
+    },
+    {
+      "name": "Leonardo Gómez",
+      "role": "CTO & Co-founder",
+      "bio": "Automation engineer. Leads tech development and IoT solution deployment."
+    },
+    {
+      "name": "Camila Duarte",
+      "role": "COO & Co-founder",
+      "bio": "Industrial operations specialist. Ensures efficiency and quality throughout the project lifecycle."
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Layout from './layout/Layout';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
+import AboutUs from './pages/AboutUs';
 import Faq from './pages/Faq';
 import Home from './pages/Home';
 import GlobalBackground from './components/GlobalBackground';
@@ -28,6 +29,7 @@ function LanguageWrapper() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<Faq />} />
       </Routes>
