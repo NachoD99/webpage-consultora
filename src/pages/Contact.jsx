@@ -12,10 +12,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
+import { useTranslation } from 'react-i18next';
 
 export default function Contacto() {
+  const { t } = useTranslation('contact');
   const handleSubmit = async (e) => {
     e.preventDefault();
+console.log("Traducción nombre:", t("name"));
 
     const formData = new FormData(e.target);
     const data = {
@@ -49,7 +52,7 @@ export default function Contacto() {
           align="center"
           gutterBottom
         >
-          Contacto
+          {t('title')}
         </Typography>
 
         <Typography
@@ -58,21 +61,21 @@ export default function Contacto() {
           color="text.secondary"
           mb={6}
         >
-          ¿Tenés un proyecto o consulta? Completá el formulario y te responderemos a la brevedad.
+          {t('description')}
         </Typography>
 
         <form onSubmit={handleSubmit}>
           <Stack spacing={3}>
-            {['nombre', 'email', 'empresa', 'mensaje'].map((field, i) => (
+            {['name', 'email', 'company', 'message'].map((field) => (
               <TextField
                 key={field}
                 name={field}
-                label={field === 'empresa' ? 'Empresa (opcional)' : field.charAt(0).toUpperCase() + field.slice(1)}
+                label={t(field)}
                 type={field === 'email' ? 'email' : 'text'}
                 variant="outlined"
-                multiline={field === 'mensaje'}
-                rows={field === 'mensaje' ? 4 : 1}
-                required={field !== 'empresa'}
+                multiline={field === 'message'}
+                rows={field === 'message' ? 4 : 1}
+                required={field !== 'company'}
                 sx={{
                   backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.25), transparent 70%)`,
                   backgroundColor: 'background.paper',
@@ -82,6 +85,8 @@ export default function Contacto() {
                 fullWidth
               />
             ))}
+
+
 
             <Button
               type="submit"
@@ -95,7 +100,7 @@ export default function Contacto() {
                 },
               }}
             >
-              Enviar mensaje
+              {t('send')}
             </Button>
           </Stack>
         </form>

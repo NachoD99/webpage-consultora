@@ -1,7 +1,8 @@
-// src/components/Hero.jsx
 import { Box, Typography, Button, Stack } from "@mui/material";
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
+  const { t } = useTranslation("hero");
   return (
     <Box
       sx={{
@@ -22,20 +23,20 @@ export default function Hero() {
            align="center"
           sx={{ fontSize: { xs: '2rem', md: '6rem' }, mb: 0 }}
         >
-          Transformamos tu 
+          {t("title1")} 
         </Typography>
         <Typography
           variant="h1"
           fontWeight={500}
           sx={{ fontSize: { xs: '2rem', md: '6rem' }, mt: 0, color: 'primary.main'}}
         >
-          Industria
+          {t("title2")}
         </Typography>
         <Typography
           variant="subtitle1"
           sx={{ maxWidth: '600px', mx: 'auto', color: 'text.secondary' }}
         >
-          Somos expertos en Industria 4.0. Digitalizamos procesos, optimizamos operaciones y te preparamos para el futuro.
+          {t("description")}
         </Typography>
 
         <Button
@@ -54,7 +55,7 @@ export default function Hero() {
             },
           }}
         >
-          Solicitar una demo
+          {t("cta")}
         </Button>
       </Stack>
     </Box>

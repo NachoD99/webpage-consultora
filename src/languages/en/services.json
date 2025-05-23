@@ -1,0 +1,19 @@
+{
+  "title1": "Our",
+  "title2": "Services",
+  "items": [
+    {
+      "title": "Process Automation",
+      "description": "We implement automation solutions to maximize operational efficiency."
+    },
+    {
+      "title": "Internet of Things (IoT)",
+      "description": "We connect your equipment to the cloud for real-time monitoring and control."
+    },
+    {
+      "title": "Data Analysis",
+      "description": "We turn your industrial data into smart decisions."
+    }
+  ],
+  "button": "Learn more"
+}

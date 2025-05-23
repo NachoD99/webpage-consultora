@@ -1,0 +1,19 @@
+{
+  "title1": "Nuestros",
+  "title2": "Servicios",
+  "items": [
+    {
+      "title": "Automatización de Procesos",
+      "description": "Implementamos soluciones de automatización para maximizar la eficiencia operativa."
+    },
+    {
+      "title": "Internet de las Cosas (IoT)",
+      "description": "Conectamos tus equipos a la nube para monitoreo y control en tiempo real."
+    },
+    {
+      "title": "Análisis de Datos",
+      "description": "Transformamos tus datos industriales en decisiones inteligentes."
+    }
+  ],
+  "button": "Ver más"
+}

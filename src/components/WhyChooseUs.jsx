@@ -12,32 +12,26 @@ import InsightsIcon from '@mui/icons-material/Insights';
 import BuildIcon from '@mui/icons-material/Build';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import { useTranslation } from 'react-i18next';
 
 const razones = [
   {
-    icon: <InsightsIcon />,
-    titulo: "Enfoque basado en datos",
-    descripcion: "Usamos inteligencia de datos para tomar decisiones estratégicas que mejoran tu operación.",
+    icon: <InsightsIcon />
   },
   {
-    icon: <BuildIcon />,
-    titulo: "Soluciones a medida",
-    descripcion: "Adaptamos nuestras herramientas a las necesidades específicas de tu planta o industria.",
+    icon: <BuildIcon />
   },
   {
-    icon: <VerifiedIcon />,
-    titulo: "Experiencia comprobada",
-    descripcion: "Contamos con casos de éxito en sectores productivos reales.",
+    icon: <VerifiedIcon />
   },
   {
-    icon: <SupportAgentIcon />,
-    titulo: "Soporte experto",
-    descripcion: "Acompañamiento técnico y consultivo en cada etapa del proyecto.",
+    icon: <SupportAgentIcon />
   },
 ];
 
 export default function PorQueElegirnos() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const { t } = useTranslation('whychooseus');
 
   return (
     <Box sx={{ py: 8, px: 2, backgroundColor: "transparent", position: 'relative' }}>
@@ -54,7 +48,7 @@ export default function PorQueElegirnos() {
           mr={2}
           color="text.secondary"
         >
-          ¿Por qué
+          {t('title_part1')}
         </Typography>
         <Typography
           variant="h4"
@@ -63,10 +57,10 @@ export default function PorQueElegirnos() {
           mb={6}
           color="primary.main"
         >
-          elegirnos
+          {t('title_part2')}
         </Typography>
         <Typography variant="h4" align="center" color="text.secondary" fontWeight={700} mb={6}>
-          ?
+          {t('title_part3')}
         </Typography>
       </Box>
       {/* Blur overlay */}
@@ -138,10 +132,10 @@ export default function PorQueElegirnos() {
               </Avatar>
               <CardContent>
                 <Typography variant="h6" fontWeight={600} gutterBottom>
-                  {razon.titulo}
+                  {t(`reasons.${index}.title`)}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {razon.descripcion}
+                  {t(`reasons.${index}.description`)}
                 </Typography>
               </CardContent>
             </Card>

@@ -13,27 +13,24 @@ import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturi
 import SensorsIcon from '@mui/icons-material/Sensors';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const servicios = [
   {
-    icon: <PrecisionManufacturingIcon fontSize="large" />,
-    titulo: "Automatización de Procesos",
-    descripcion: "Implementamos soluciones de automatización para maximizar la eficiencia operativa.",
+    icon: <PrecisionManufacturingIcon fontSize="large" />
   },
   {
-    icon: <SensorsIcon fontSize="large" />,
-    titulo: "Internet de las Cosas (IoT)",
-    descripcion: "Conectamos tus equipos a la nube para monitoreo y control en tiempo real.",
+    icon: <SensorsIcon fontSize="large" />
   },
   {
-    icon: <AssessmentIcon fontSize="large" />,
-    titulo: "Análisis de Datos",
-    descripcion: "Transformamos tus datos industriales en decisiones inteligentes.",
+    icon: <AssessmentIcon fontSize="large" />
   },
 ];
 
 export default function Servicios() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const { t } = useTranslation('services');
+
   return (
     <Box sx={{ py: 8, px: 2, backgroundColor: "transparent" }}>
       <Box display={"flex"}
@@ -49,7 +46,7 @@ export default function Servicios() {
           mr={2}
           color="text.secondary"
         >
-          Nuestros
+          {t('title1')}
         </Typography>
         <Typography
           variant="h4"
@@ -58,7 +55,7 @@ export default function Servicios() {
           mb={6}
           color="primary.main"
         >
-          Servicios
+          {t('title2')}
         </Typography>
       </Box>
       {hoveredIndex !== null && (
@@ -128,10 +125,10 @@ export default function Servicios() {
                   {servicio.icon}
                 </Avatar>
                 <Typography variant="h6" gutterBottom>
-                  {servicio.titulo}
+                  {t(`items.${index}.title`)}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {servicio.descripcion}
+                  {t(`items.${index}.description`)}
                 </Typography>
               </CardContent>
 
@@ -146,7 +143,7 @@ export default function Servicios() {
                     },
                   }}
                 >
-                  Ver más
+                  {t('button')}
                 </Button>
               </CardActions>
             </Card>

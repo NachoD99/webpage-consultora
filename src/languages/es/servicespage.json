@@ -1,0 +1,21 @@
+{
+  "title": "Nuestros Servicios",
+  "items": [
+    {
+      "title": "Automatización de Procesos",
+      "description": "Optimizamos líneas de producción con tecnología avanzada."
+    },
+    {
+      "title": "Internet de las Cosas (IoT)",
+      "description": "Conectamos tus dispositivos industriales en tiempo real."
+    },
+    {
+      "title": "Análisis Predictivo",
+      "description": "Usamos IA y datos históricos para anticipar fallos."
+    },
+    {
+      "title": "Gemelos Digitales",
+      "description": "Simulamos virtualmente tu planta en tiempo real."
+    }
+  ]
+}

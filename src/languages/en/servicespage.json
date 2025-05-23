@@ -1,0 +1,21 @@
+{
+  "title": "Our Services",
+  "items": [
+    {
+      "title": "Process Automation",
+      "description": "We optimize production lines with advanced technology."
+    },
+    {
+      "title": "Internet of Things (IoT)",
+      "description": "We connect your industrial devices in real time."
+    },
+    {
+      "title": "Predictive Analytics",
+      "description": "We use AI and historical data to anticipate failures."
+    },
+    {
+      "title": "Digital Twins",
+      "description": "We simulate your plant virtually in real time."
+    }
+  ]
+}

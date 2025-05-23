@@ -1,0 +1,9 @@
+{
+  "title": "Contacto",
+  "description": "¿Tenés un proyecto o consulta? Completá el formulario y te responderemos a la brevedad.",
+  "name": "Nombre",
+  "email": "Email",
+  "company": "Empresa (opcional)",
+  "message": "Mensaje",
+  "send": "Enviar mensaje"
+}

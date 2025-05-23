@@ -1,4 +1,3 @@
-// src/pages/Services.jsx
 import {
   Box,
   Typography,
@@ -20,36 +19,31 @@ import BuildIcon from '@mui/icons-material/Build';
 import MemoryIcon from '@mui/icons-material/Memory';
 import InsightsIcon from '@mui/icons-material/Insights';
 import SensorsIcon from '@mui/icons-material/Sensors';
+import { useTranslation } from 'react-i18next';
 
 const servicios = [
   {
-    titulo: 'Automatización de Procesos',
-    descripcion: 'Optimizamos líneas de producción con tecnología avanzada.',
     icono: <BuildIcon />,
   },
   {
-    titulo: 'Internet de las Cosas (IoT)',
-    descripcion: 'Conectamos tus dispositivos industriales en tiempo real.',
     icono: <SensorsIcon />,
   },
   {
-    titulo: 'Análisis Predictivo',
-    descripcion: 'Usamos IA y datos históricos para anticipar fallos.',
     icono: <InsightsIcon />,
   },
   {
-    titulo: 'Gemelos Digitales',
-    descripcion: 'Simulamos virtualmente tu planta en tiempo real.',
     icono: <MemoryIcon />,
   },
 ];
 
 export default function Services() {
+  const { t } = useTranslation('servicespage');
+
   return (
     <Box sx={{ backgroundColor: 'transparent', py: 10 }}>
       <Container>
         <Typography variant="h4" fontWeight={700} align="center" mb={6}>
-          Nuestros Servicios
+          {t('title')}
         </Typography>
 
         <Timeline position="alternate">
@@ -59,7 +53,7 @@ export default function Services() {
                 sx={{ color: 'text.primary' }}
                 variant="body2"
               >
-                {servicio.titulo}
+                {t(`items.${index}.title`)}
               </TimelineOppositeContent>
               <TimelineSeparator>
                 <TimelineDot color="primary">
@@ -79,10 +73,10 @@ export default function Services() {
                   }}
                 >
                   <Typography variant="subtitle1" fontWeight="bold">
-                    {servicio.titulo}
+                    {t(`items.${index}.title`)}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {servicio.descripcion}
+                    {t(`items.${index}.description`)}
                   </Typography>
                 </Paper>
               </TimelineContent>

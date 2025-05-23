@@ -1,4 +1,7 @@
 import Footer from '../components/Footer';
+import { Menu, MenuItem } from '@mui/material';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { useTranslation } from 'react-i18next';
 
 import {
   AppBar,
@@ -17,17 +20,49 @@ import {
   useTheme,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-const navItems = [
-  { label: 'INICIO', to: '/' },
-  { label: 'SERVICIOS', to: '/services' },
-  { label: 'CONTACTO', to: '/contact' },
-  { label: 'FAQ', to: '/faq' },
-];
-
 export default function Layout({ children }) {
+  const { i18n, t } = useTranslation('layout');
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const navigate = useNavigate();
+
+  
+  const languages = [
+    { code: 'es', label: 'Español', flag: 'https://flagcdn.com/24x18/es.png' },
+    { code: 'en', label: 'English', flag: 'https://flagcdn.com/24x18/gb.png' },
+  ];
+
+  const lng = i18n.language.split('-')[0];
+
+  const currentFlag = languages.find((l) => i18n.language.startsWith(l.code))?.flag;
+
+
+  const navItems = [
+    { label: t('home'), to: `/${lng}` },
+    { label: t('services'), to: `/${lng}/services` },
+    { label: t('contact'), to: `/${lng}/contact` },
+    { label: t('faq'), to: `/${lng}/faq` }
+  ];
+
+  const handleMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleLanguageChange = (code) => {
+    const newPath = location.pathname.replace(/^\/(es|en)/, `/${code}`);
+    i18n.changeLanguage(code);
+    navigate(newPath);
+    handleClose();
+  };
+
+
   const location = useLocation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -48,8 +83,7 @@ export default function Layout({ children }) {
           borderRadius: isMobile ? 0 : '30px',
           backdropFilter: 'blur(10px)',
           backgroundImage: isMobile ? 0 : `radial-gradient(ellipse at top, rgba(0,191,255,0.25), transparent 70%)`,
-          backgroundColor: isMobile ? 'transparent' : 'rgba(43, 43, 92, 0.5)',
-          // border: isMobile ? '0' : '2px solid rgba(73, 75, 110, 0.5)',
+          backgroundColor: isMobile ? 'transparent' : 'rgba(43, 43, 92, 0.5)'
         }}
       >
         <Container maxWidth="lg">
@@ -66,7 +100,7 @@ export default function Layout({ children }) {
                 fontSize: '1.25rem',
               }}
             >
-              Industria 4.0
+              {t('title')}
             </Typography>
 
             {/* Desktop Nav */}
@@ -91,6 +125,54 @@ export default function Layout({ children }) {
                     {label}
                   </Button>
                 ))}
+                <Box sx={{ ml: 2 }}>
+                  <Button
+                    onClick={handleMenuClick}
+                    sx={{
+                      color: 'white',
+                      textTransform: 'none',
+                      fontWeight: 600,
+                      mt: 0.7
+                    }}
+                    endIcon={<ArrowDropDownIcon />}
+                  >
+                    <img
+                      src={
+                        currentFlag
+                      }
+                      width={24}
+                      height={18}
+                    />
+
+                  </Button>
+
+                  <Menu
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    PaperProps={{
+                      sx: {
+                        backgroundColor: 'background.paper',
+                        color: 'text.primary',
+                        mt: 1,
+                      },
+                    }}
+                  >
+                    {languages.map(({ code, label, flag }) => (
+                      <MenuItem
+                        key={code}
+                        onClick={() => handleLanguageChange(code)}
+                        selected={i18n.language === code}
+                      >
+                        <span style={{ marginRight: 8 }}>
+                          <img
+                            src={flag}
+                          />
+                        </span> {label}
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </Box>
               </Stack>
             )}
 
@@ -130,6 +212,14 @@ export default function Layout({ children }) {
                         </ListItem>
                       ))}
                     </List>
+                    <Stack direction="row" spacing={2} justifyContent="center" mt={2}>
+                      <IconButton onClick={() => handleLanguageChange('es')} aria-label="Español">
+                        <span role="img" aria-label="ES" style={{ fontSize: 22 }}>🇪🇸</span>
+                      </IconButton>
+                      <IconButton onClick={() => handleLanguageChange('en')} aria-label="English">
+                        <span role="img" aria-label="EN" style={{ fontSize: 22 }}>🇺🇸</span>
+                      </IconButton>
+                    </Stack>
                   </Box>
                 </Drawer>
               </>

@@ -1,0 +1,9 @@
+{
+  "title": "Contact",
+  "description": "Do you have a project or inquiry? Fill out the form and we’ll get back to you shortly.",
+  "name": "Name",
+  "email": "Email",
+  "company": "Company (optional)",
+  "message": "Message",
+  "send": "Send message"
+}

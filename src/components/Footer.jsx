@@ -1,7 +1,9 @@
-// src/components/Footer.jsx
 import { Box, Container, Typography, Stack, Link, Divider } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation('footer');
+
   return (
     <Box
       component="footer"
@@ -21,18 +23,18 @@ export default function Footer() {
           spacing={4}
         >
           <Typography variant="body2" sx={{ fontWeight: 500 }}>
-            © {new Date().getFullYear()} Consultora Industria 4.0. Todos los derechos reservados.
+             {t('copyright', { year: new Date().getFullYear() })}
           </Typography>
 
           <Stack direction="row" spacing={3}>
             <Link href="#" underline="hover" color="text.secondary">
-              Privacidad
+              {t('privacy')}
             </Link>
             <Link href="#" underline="hover" color="text.secondary">
-              Términos
+              {t('terms')}
             </Link>
             <Link href="/contact" underline="hover" color="text.secondary">
-              Contacto
+              {t('contact')}
             </Link>
           </Stack>
         </Stack>

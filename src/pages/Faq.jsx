@@ -21,46 +21,37 @@ import EngineeringIcon from '@mui/icons-material/Engineering';
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const faqs = [
     {
         icon: <HelpOutlineIcon />,
-        pregunta: '¿Qué es la Industria 4.0?',
-        respuesta:
-            'Es la transformación digital de los procesos industriales mediante tecnologías como IoT, IA, automatización y análisis de datos.',
     },
     {
         icon: <EngineeringIcon />,
-        pregunta: '¿Qué servicios ofrecen como consultora?',
-        respuesta:
-            'Brindamos diagnóstico, desarrollo de soluciones a medida, implementación tecnológica y capacitación para digitalizar tu industria.',
     },
     {
         icon: <InfoOutlinedIcon />,
-        pregunta: '¿Trabajan con empresas pequeñas o solo grandes plantas?',
-        respuesta:
-            'Colaboramos con empresas de todos los tamaños. Nuestras soluciones son escalables y adaptables a cada realidad.',
     },
     {
         icon: <SupportAgentIcon />,
-        pregunta: '¿Puedo solicitar una demo o asesoría sin compromiso?',
-        respuesta:
-            'Sí. Podés agendar una reunión para entender tus necesidades y mostrarte cómo podríamos ayudarte.',
     },
 ];
 
 export default function Faq() {
-    const [search, setSearch] = useState('');
+    const { t } = useTranslation('faq');
 
+    const [search, setSearch] = useState('');
+    const faqs = t('items', { returnObjects: true });
     const filteredFaqs = faqs.filter(faq =>
-        faq.pregunta.toLowerCase().includes(search.toLowerCase())
+        faq.question.toLowerCase().includes(search.toLowerCase())
     );
 
     return (
         <Box sx={{ backgroundColor: 'transparent', py: 10 }}>
             <Container maxWidth="md">
                 <Typography variant="h4" fontWeight={700} align="center" mb={4}>
-                    Preguntas Frecuentes
+                    {t('title')}
                 </Typography>
                 <Box
                     sx={{
@@ -77,7 +68,7 @@ export default function Faq() {
                 >
                     <SearchIcon color="primary" />
                     <InputBase
-                        placeholder="Buscar pregunta..."
+                        placeholder={t('searchPlaceholder')}
                         fullWidth
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
@@ -110,12 +101,12 @@ export default function Faq() {
                                 >
                                     <Stack direction="row" spacing={2} alignItems="center">
                                         {faq.icon}
-                                        <Typography fontWeight={600}>{faq.pregunta}</Typography>
+                                        <Typography fontWeight={600}>{t(`items.${index}.question`)}</Typography>
                                     </Stack>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Typography color="text.secondary">
-                                        {faq.respuesta}
+                                        {t(`items.${index}.answer`)}
                                     </Typography>
                                 </AccordionDetails>
                             </Accordion>
@@ -123,7 +114,7 @@ export default function Faq() {
                     ))
                 ) : (
                     <Typography variant="body1" color="text.secondary">
-                        No se encontraron preguntas que coincidan.
+                        {t('notFound')}
                     </Typography>
                 )}
 
@@ -132,7 +123,7 @@ export default function Faq() {
                 {/* CTA final */}
                 <Box textAlign="center">
                     <Typography variant="h6" fontWeight={600} mb={2}>
-                        ¿No encontraste lo que buscabas?
+                        {t('ctaTitle')}
                     </Typography>
                     <Button
                         variant="contained"
@@ -140,7 +131,7 @@ export default function Faq() {
                         href="/contact"
                         sx={{ fontWeight: 'bold', px: 4, py: 1 }}
                     >
-                        Contactanos
+                        {t('ctaButton')}
                     </Button>
                 </Box>
             </Container>
