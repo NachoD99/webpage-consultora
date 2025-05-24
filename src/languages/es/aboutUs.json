@@ -2,11 +2,14 @@
   "title1": "Sobre ",
   "title2": "Nosotros",
   "description": "Somos una consultora especializada en transformación digital e innovación industrial. Combinamos experiencia técnica con visión estratégica para ayudarte a implementar soluciones inteligentes, escalables y sostenibles en tu operación.",
-  "missionTitle": "Nuestra Misión",
+  "missionTitle1": "Nuestra ",
+  "missionTitle2": "Misión",
   "missionText": "Potenciar la eficiencia y sostenibilidad de las industrias a través de la digitalización, la automatización y el uso estratégico de datos.",
-  "visionTitle": "Nuestra Visión",
+  "visionTitle1": "Nuestra ",
+  "visionTitle2": "Visión",
   "visionText": "Ser referentes en innovación industrial, construyendo puentes entre la tecnología emergente y la realidad productiva de nuestros clientes.",
-  "teamTitle": "Nuestro Equipo Directivo",
+  "teamTitle1": "Nuestro ",
+  "teamTitle2": "Equipo Directivo",
   "ceos": [
     {
       "name": "Valentina Ruiz",

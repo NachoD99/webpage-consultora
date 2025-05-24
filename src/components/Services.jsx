@@ -1,4 +1,3 @@
-// src/components/Servicios.jsx
 import {
   Box,
   Typography,
@@ -14,6 +13,7 @@ import SensorsIcon from '@mui/icons-material/Sensors';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
 const servicios = [
   {
@@ -33,46 +33,51 @@ export default function Servicios() {
 
   return (
     <Box sx={{ py: 8, px: 2, backgroundColor: "transparent" }}>
-      <Box display={"flex"}
-        flexDirection={"row"}
-        alignItems={"center"}
-        justifyContent={"center"}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        <Typography
-          variant="h4"
-          align="center"
-          fontWeight={700}
-          mb={6}
-          mr={2}
-          color="text.secondary"
+        <Box display={"flex"}
+          flexDirection={"row"}
+          alignItems={"center"}
+          justifyContent={"center"}
         >
-          {t('title1')}
-        </Typography>
-        <Typography
-          variant="h4"
-          align="center"
-          fontWeight={700}
-          mb={6}
-          sx={{background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}
-        >
-          {t('title2')}
-        </Typography>
-      </Box>
-      {hoveredIndex !== null && (
-        <Box
-          sx={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            backdropFilter: 'blur(12px)',
-            zIndex: 10,
-            pointerEvents: 'none',
-          }}
-        />
-      )}
-
+          <Typography
+            variant="h4"
+            align="center"
+            fontWeight={700}
+            mb={6}
+            mr={2}
+            color="text.secondary"
+          >
+            {t('title1')}
+          </Typography>
+          <Typography
+            variant="h4"
+            align="center"
+            fontWeight={700}
+            mb={6}
+            sx={{ background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+          >
+            {t('title2')}
+          </Typography>
+        </Box>
+        {hoveredIndex !== null && (
+          <Box
+            sx={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              backdropFilter: 'blur(12px)',
+              zIndex: 10,
+              pointerEvents: 'none',
+            }}
+          />
+        )}
+      </motion.div>
       {/* Cards */}
       <Grid
         container

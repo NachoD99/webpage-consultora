@@ -2,6 +2,7 @@ import Footer from '../components/Footer';
 import { Menu, MenuItem } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useTranslation } from 'react-i18next';
+import LanguageIcon from '@mui/icons-material/Language';
 
 import {
   AppBar,
@@ -29,7 +30,6 @@ export default function Layout({ children }) {
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
 
-  
   const languages = [
     { code: 'es', label: 'Español', flag: 'https://flagcdn.com/24x18/es.png' },
     { code: 'en', label: 'English', flag: 'https://flagcdn.com/24x18/gb.png' },
@@ -37,8 +37,7 @@ export default function Layout({ children }) {
 
   const lng = i18n.language.split('-')[0];
 
-  const currentFlag = languages.find((l) => i18n.language.startsWith(l.code))?.flag;
-
+  //const currentFlag = languages.find((l) => i18n.language.startsWith(l.code))?.flag;
 
   const navItems = [
     { label: t('home'), to: `/${lng}` },
@@ -138,13 +137,7 @@ export default function Layout({ children }) {
                     }}
                     endIcon={<ArrowDropDownIcon />}
                   >
-                    <img
-                      src={
-                        currentFlag
-                      }
-                      width={24}
-                      height={18}
-                    />
+                    <LanguageIcon width={24} height={18}></LanguageIcon>
 
                   </Button>
 

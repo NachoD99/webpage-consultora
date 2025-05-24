@@ -13,12 +13,13 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
 export default function Contacto() {
   const { t } = useTranslation('contact');
   const handleSubmit = async (e) => {
     e.preventDefault();
-console.log("Traducción nombre:", t("name"));
+    console.log("Traducción nombre:", t("name"));
 
     const formData = new FormData(e.target);
     const data = {
@@ -46,101 +47,107 @@ console.log("Traducción nombre:", t("name"));
   return (
     <Box sx={{ backgroundColor: "transparent", py: 10 }}>
       <Container maxWidth="sm">
-        <Typography
-          variant="h4"
-          fontWeight={700}
-          align="center"
-          gutterBottom
-          sx={{background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          {t('title')}
-        </Typography>
+          <Typography
+            variant="h4"
+            fontWeight={700}
+            align="center"
+            gutterBottom
+            sx={{ background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+          >
+            {t('title')}
+          </Typography>
 
-        <Typography
-          variant="body1"
-          align="center"
-          color="text.secondary"
-          mb={6}
-        >
-          {t('description')}
-        </Typography>
+          <Typography
+            variant="body1"
+            align="center"
+            color="text.secondary"
+            mb={6}
+          >
+            {t('description')}
+          </Typography>
 
-        <form onSubmit={handleSubmit}>
-          <Stack spacing={3}>
-            {['name', 'email', 'company', 'message'].map((field) => (
-              <TextField
-                key={field}
-                name={field}
-                label={t(field)}
-                type={field === 'email' ? 'email' : 'text'}
-                variant="outlined"
-                multiline={field === 'message'}
-                rows={field === 'message' ? 4 : 1}
-                required={field !== 'company'}
+          <form onSubmit={handleSubmit}>
+            <Stack spacing={3}>
+              {['name', 'email', 'company', 'message'].map((field) => (
+                <TextField
+                  key={field}
+                  name={field}
+                  label={t(field)}
+                  type={field === 'email' ? 'email' : 'text'}
+                  variant="outlined"
+                  multiline={field === 'message'}
+                  rows={field === 'message' ? 4 : 1}
+                  required={field !== 'company'}
+                  sx={{
+                    backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.25), transparent 70%)`,
+                    backgroundColor: 'background.paper',
+                    border: '1px solid rgba(0,191,255, 0.5)',
+                    borderRadius: '15px'
+                  }}
+                  fullWidth
+                />
+              ))}
+
+              <Button
+                type="submit"
+                variant="contained"
                 sx={{
-                  backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.25), transparent 70%)`,
-                  backgroundColor: 'background.paper',
-                  border: '1px solid rgba(0,191,255, 0.5)',
-                  borderRadius: '15px'
+                  bgcolor: 'primary.main',
+                  color: '#000',
+                  fontWeight: 'bold',
+                  '&:hover': {
+                    bgcolor: 'secondary.main',
+                  },
                 }}
-                fullWidth
-              />
-            ))}
+              >
+                {t('send')}
+              </Button>
+            </Stack>
+          </form>
 
-            <Button
-              type="submit"
-              variant="contained"
-              sx={{
-                bgcolor: 'primary.main',
-                color: '#000',
-                fontWeight: 'bold',
-                '&:hover': {
-                  bgcolor: 'secondary.main',
-                },
-              }}
+          {/* Redes sociales */}
+          <Stack direction="row" spacing={2} justifyContent="center" mt={6}>
+            <IconButton
+              component="a"
+              href="https://www.linkedin.com/company/tuempresa"
+              target="_blank"
+              rel="noopener"
+              sx={{ color: 'primary.main' }}
             >
-              {t('send')}
-            </Button>
+              <LinkedInIcon />
+            </IconButton>
+            <IconButton
+              component="a"
+              href="https://www.instagram.com/tuempresa"
+              target="_blank"
+              rel="noopener"
+              sx={{ color: 'primary.main' }}
+            >
+              <InstagramIcon />
+            </IconButton>
+            <IconButton
+              component="a"
+              href="https://twitter.com/tuempresa"
+              target="_blank"
+              rel="noopener"
+              sx={{ color: 'primary.main' }}
+            >
+              <TwitterIcon />
+            </IconButton>
+            <IconButton
+              component="a"
+              href="mailto:contacto@tuempresa.com"
+              sx={{ color: 'primary.main' }}
+            >
+              <EmailIcon />
+            </IconButton>
           </Stack>
-        </form>
-
-        {/* Redes sociales */}
-        <Stack direction="row" spacing={2} justifyContent="center" mt={6}>
-          <IconButton
-            component="a"
-            href="https://www.linkedin.com/company/tuempresa"
-            target="_blank"
-            rel="noopener"
-            sx={{ color: 'primary.main' }}
-          >
-            <LinkedInIcon />
-          </IconButton>
-          <IconButton
-            component="a"
-            href="https://www.instagram.com/tuempresa"
-            target="_blank"
-            rel="noopener"
-            sx={{ color: 'primary.main' }}
-          >
-            <InstagramIcon />
-          </IconButton>
-          <IconButton
-            component="a"
-            href="https://twitter.com/tuempresa"
-            target="_blank"
-            rel="noopener"
-            sx={{ color: 'primary.main' }}
-          >
-            <TwitterIcon />
-          </IconButton>
-          <IconButton
-            component="a"
-            href="mailto:contacto@tuempresa.com"
-            sx={{ color: 'primary.main' }}
-          >
-            <EmailIcon />
-          </IconButton>
-        </Stack>
+        </motion.div>
       </Container>
     </Box>
   );

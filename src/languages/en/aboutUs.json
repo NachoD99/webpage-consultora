@@ -2,11 +2,14 @@
   "title1": "About ",
   "title2": "Us",
   "description": "We are a consulting firm specialized in digital transformation and industrial innovation. We combine technical expertise with strategic vision to help you implement intelligent, scalable, and sustainable solutions in your operations.",
-  "missionTitle": "Our Mission",
+  "missionTitle1": "Our ",
+  "missionTitle2": "Mission",
   "missionText": "To enhance industrial efficiency and sustainability through digitization, automation, and strategic use of data.",
-  "visionTitle": "Our Vision",
+  "visionTitle1": "Our ",
+  "visionTitle2": "Vision",
   "visionText": "To be leaders in industrial innovation, building bridges between emerging technologies and our clients' production realities.",
-  "teamTitle": "Our Leadership Team",
+  "teamTitle1": "Our ",
+  "teamTitle2": "Leadership Team",
   "ceos": [
     {
       "name": "Valentina Ruiz",
