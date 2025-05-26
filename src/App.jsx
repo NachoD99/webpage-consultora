@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useParams } from 'react-router-dom';
+import { useLocation, Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -10,6 +10,26 @@ import Faq from './pages/Faq';
 import Home from './pages/Home';
 import GlobalBackground from './components/GlobalBackground';
 import VantaBackground from "./components/VantaBackground";
+import { initGA, logPageView } from './services/analytics';
+
+function AppWrapper() {
+  const location = useLocation();
+
+  useEffect(() => {
+    initGA();
+  }, []);
+
+  useEffect(() => {
+    logPageView(location.pathname + location.search);
+  }, [location]);
+
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/es" />} />
+      <Route path="/:lng/*" element={<LanguageWrapper />} />
+    </Routes>
+  );
+}
 
 function LanguageWrapper() {
   const { lng } = useParams();
@@ -23,9 +43,8 @@ function LanguageWrapper() {
 
   return (
     <Layout>
-      
-        <GlobalBackground />
-        <VantaBackground />
+      <GlobalBackground />
+      <VantaBackground />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
@@ -39,9 +58,6 @@ function LanguageWrapper() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/es" />} />
-      <Route path="/:lng/*" element={<LanguageWrapper />} />
-    </Routes>
+      <AppWrapper />
   );
 }
