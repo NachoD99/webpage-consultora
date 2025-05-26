@@ -24,7 +24,7 @@ export default function VantaGradientBackground() {
             scale: 1.0,
             scaleMobile: 1.0,
             color: 0x00bfff,             // LÍNEAS AZULES 🔵
-            backgroundColor: 0x0a0f1c,   // FONDO OSCURO OTRA OPCION VIOLETA: 0X581845
+            backgroundColor: 0x000,   // FONDO OSCURO OTRA OPCION VIOLETA: 0X581845
           })
         );
       }
