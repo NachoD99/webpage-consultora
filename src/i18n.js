@@ -22,6 +22,8 @@ import footerEs from './languages/es/footer.json';
 import footerEn from './languages/en/footer.json';
 import aboutUsEs from './languages/es/aboutUs.json';
 import aboutUsEn from './languages/en/aboutUs.json';
+import statisticsEs from './languages/es/statistics.json';
+import statisticsEn from './languages/en/statistics.json';
 
 i18n
     .use(LanguageDetector)
@@ -40,6 +42,7 @@ i18n
                 servicespage: servicespageEs,
                 footer: footerEs,
                 aboutUs: aboutUsEs,
+                statistics: statisticsEs,
             },
             en: {
                 layout: layoutEn,
@@ -52,6 +55,7 @@ i18n
                 servicespage: servicespageEn,
                 footer: footerEn,
                 aboutUs: aboutUsEn,
+                statistics: statisticsEn,
             },
         },
         fallbackLng: 'es',

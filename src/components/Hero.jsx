@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <Box
       sx={{
-        minHeight: '90vh',
+        minHeight: '60vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
