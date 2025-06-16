@@ -1,6 +1,7 @@
 import { Box, Typography, Button, Stack } from "@mui/material";
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import TypingTitle from "./TypingTitle";
 
 export default function Hero() {
   const { t } = useTranslation("hero");
@@ -17,30 +18,16 @@ export default function Hero() {
         color: 'text.primary',
       }}
     >
-      <Stack spacing={4} width="800px" sx={{ mx: 'auto', color: 'text.secondary' }} maxWidth="lg">
+      <Stack spacing={4} sx={{ mx: 'auto', color: 'text.secondary' }}>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Typography
-            variant="h1"
-            fontWeight={500}
-            align="center"
-            sx={{ fontSize: { xs: '2rem', md: '6rem' }, mb: 0 }}
-          >
-            {t("title1")}
-          </Typography>
-          <Typography
-            variant="h1"
-            fontWeight={500}
-            sx={{ fontSize: { xs: '2rem', md: '6rem' }, mt: 0, background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
-          >
-            {t("title2")}
-          </Typography>
+         <TypingTitle />
           <Typography
             variant="subtitle1"
-            sx={{ maxWidth: '600px', mx: 'auto', color: 'text.secondary' }}
+            sx={{mx: 'auto', width:"800px", fontSize: { xs: "2rem", md: "1.5rem" }, my:6,  color: 'text.secondary' }}
           >
             {t("description")}
           </Typography>

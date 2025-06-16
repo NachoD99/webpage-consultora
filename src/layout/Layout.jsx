@@ -91,7 +91,7 @@ export default function Layout({ children }) {
                 textDecoration: 'none',
                 fontWeight: 700,
                 fontSize: '1.25rem',
-                background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'
+                background: (theme) => theme.palette.text.primary, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'
               }}
             >
               {t('title')}
