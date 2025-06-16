@@ -223,7 +223,7 @@ export default function About() {
                                         sx={{
                                             height: 240,
                                             width: '100%',
-                                            backgroundImage: `url(/src/images/ceo${i + 1}.jpg)`, // Asegurate de tener /images/ceo1.jpg, ceo2.jpg, etc.
+                                            backgroundImage: `url(../images/ceo${i + 1}.HEIC)`, // Asegurate de tener /images/ceo1.jpg, ceo2.jpg, etc.
                                             backgroundSize: 'cover',
                                             backgroundPosition: 'center'
                                         }}
@@ -231,7 +231,7 @@ export default function About() {
 
                                     {/* Contenido */}
                                     <Box sx={{ p: 3 }}>
-                                        <Typography variant="subtitle1" fontWeight={600}>
+                                        <Typography variant="subtitle1" fontWeight={700}>
                                             {ceo.name}
                                         </Typography>
                                         <Typography variant="caption" color="text.secondary">
@@ -239,6 +239,9 @@ export default function About() {
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary" mt={1}>
                                             {ceo.bio}
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary" mt={1} fontWeight={700}>
+                                            {ceo.commitment}
                                         </Typography>
                                     </Box>
                                 </Box>

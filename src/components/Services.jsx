@@ -25,6 +25,9 @@ const servicios = [
   {
     icon: <AssessmentIcon fontSize="large" />
   },
+  {
+    icon: <AssessmentIcon fontSize="large" />
+  },
 ];
 
 export default function Servicios() {
@@ -132,14 +135,15 @@ export default function Servicios() {
                 <Typography variant="h6" gutterBottom>
                   {t(`items.${index}.title`)}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                {/* <Typography variant="body2" color="text.secondary">
                   {t(`items.${index}.description`)}
-                </Typography>
+                </Typography> */}
               </CardContent>
 
               <CardActions sx={{ justifyContent: 'center', mt: 1 }}>
                 <Button
                   variant="text"
+                  href="/services"
                   sx={{
                     color: 'primary.main',
                     fontWeight: 'bold',

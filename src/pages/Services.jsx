@@ -81,6 +81,17 @@ export default function Services() {
               {t('title2')}
             </Typography>
           </Box>
+
+          <Typography
+            variant="subtitle"
+            align="center"
+            fontWeight={700}
+            mb={6}
+            mr={2}
+            color="text.secondary"
+          >
+            {t('description')}
+          </Typography>
         </motion.div>
         <Timeline position="alternate">
           {servicios.map((servicio, index) => (

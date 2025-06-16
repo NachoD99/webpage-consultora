@@ -27,7 +27,7 @@ export default function Hero() {
          <TypingTitle />
           <Typography
             variant="subtitle1"
-            sx={{mx: 'auto', width:"800px", fontSize: { xs: "2rem", md: "1.5rem" }, my:6,  color: 'text.secondary' }}
+            sx={{mx: 'auto', width: { xs: "380px", md: "1000px" }, fontSize: { xs: "1rem", md: "1.5rem" }, my:6,  color: 'text.secondary' }}
           >
             {t("description")}
           </Typography>

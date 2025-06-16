@@ -31,7 +31,7 @@ const TypingTitle = () => {
         variant="h1"
         fontWeight={500}
         sx={{
-          fontSize: { xs: "2rem", md: "15rem" },
+          fontSize: { xs: "4rem", md: "15rem" },
           mb: 0,
         }}
       >
@@ -42,7 +42,7 @@ const TypingTitle = () => {
         variant="h1"
         fontWeight={500}
         sx={{
-          fontSize: { xs: "2rem", md: "15rem" },
+          fontSize: { xs: "4rem", md: "15rem" },
           mt: 0,
           whiteSpace: "nowrap",
           background: (theme) => theme.palette.primary.gradient,
