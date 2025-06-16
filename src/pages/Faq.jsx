@@ -22,7 +22,8 @@ import EngineeringIcon from '@mui/icons-material/Engineering';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Helmet } from 'react-helmet-async';
+import { useMetaTags } from "../services/useMetaTags";
+
 const faqs = [
     {
         icon: <HelpOutlineIcon />,
@@ -47,16 +48,15 @@ export default function Faq() {
         faq.question.toLowerCase().includes(search.toLowerCase())
     );
 
+    useMetaTags({
+    title: t("meta.title"),
+    description: t("meta.description"),
+    keywords: t("meta.description"),
+    lang: i18n.language,
+  });
+
     return (
         <Box sx={{ backgroundColor: 'transparent', py: 10 }}>
-            <Helmet key={i18n.language}>
-                <html lang={i18n.language} />
-                <title>{t('meta.title')}</title>
-                <meta name="description" content={t('meta.description')} />
-                <meta name="keywords" content={t('meta.keywords')} />
-                <meta property="og:title" content={t('meta.title')} />
-                <meta property="og:description" content={t('meta.description')} />
-            </Helmet>
             <Container maxWidth="md">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}

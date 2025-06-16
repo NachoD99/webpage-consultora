@@ -14,7 +14,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import { useMetaTags } from "../services/useMetaTags";
 
 export default function Contacto() {
   const { t, i18n } = useTranslation('contact');
@@ -44,17 +44,16 @@ export default function Contacto() {
       alert("Error al enviar el mensaje.");
     }
   };
+  
+  useMetaTags({
+    title: t("meta.title"),
+    description: t("meta.description"),
+    keywords: t("meta.description"),
+    lang: i18n.language,
+  });
 
   return (
     <Box sx={{ backgroundColor: "transparent", py: 10 }}>
-      <Helmet key={i18n.language}>
-                <html lang={i18n.language} />
-                <title>{t('meta.title')}</title>
-                <meta name="description" content={t('meta.description')} />
-                <meta name="keywords" content={t('meta.keywords')} />
-                <meta property="og:title" content={t('meta.title')} />
-                <meta property="og:description" content={t('meta.description')} />
-            </Helmet>
       <Container maxWidth="sm">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

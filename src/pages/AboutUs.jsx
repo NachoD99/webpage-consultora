@@ -13,7 +13,7 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import { useMetaTags } from "../services/useMetaTags";
 
 export default function About() {
     const { t, i18n } = useTranslation('aboutUs');
@@ -24,17 +24,16 @@ export default function About() {
         <VerifiedUserIcon />
     ];
     const ceos = t('ceos', { returnObjects: true });
-    console.log("ceos", typeof ceos);
+    
+    useMetaTags({
+        title: t("meta.title"),
+        description: t("meta.description"),
+        keywords: t("meta.description"),
+        lang: i18n.language,
+      });
+
     return (
         <Box sx={{ py: 10, backgroundColor: 'transparent' }}>
-            <Helmet key={i18n.language}>
-                <html lang={i18n.language} />
-                <title>{t('meta.title')}</title>
-                <meta name="description" content={t('meta.description')} />
-                <meta name="keywords" content={t('meta.keywords')} />
-                <meta property="og:title" content={t('meta.title')} />
-                <meta property="og:description" content={t('meta.description')} />
-            </Helmet>
             <Container maxWidth="md">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
