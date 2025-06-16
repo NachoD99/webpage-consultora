@@ -28,23 +28,18 @@ export default function Layout({ children }) {
   const { i18n, t } = useTranslation('layout');
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const navigate = useNavigate();
 
   const languages = [
     { code: 'es', label: 'Español', flag: 'https://flagcdn.com/24x18/es.png' },
     { code: 'en', label: 'English', flag: 'https://flagcdn.com/24x18/gb.png' },
   ];
 
-  const lng = i18n.language.split('-')[0];
-
-  //const currentFlag = languages.find((l) => i18n.language.startsWith(l.code))?.flag;
-
   const navItems = [
-    { label: t('home'), to: `/${lng}` },
-    { label: t('services'), to: `/${lng}/services` },
-    { label: t('aboutUs'), to: `/${lng}/aboutus` },
-    { label: t('contact'), to: `/${lng}/contact` },
-    { label: t('faq'), to: `/${lng}/faq` }
+    { label: t('home'), to: `/` },
+    { label: t('services'), to: `/services` },
+    { label: t('aboutUs'), to: `/aboutus` },
+    { label: t('contact'), to: `/contact` },
+    { label: t('faq'), to: `/faq` }
   ];
 
   const handleMenuClick = (event) => {
@@ -56,9 +51,7 @@ export default function Layout({ children }) {
   };
 
   const handleLanguageChange = (code) => {
-    const newPath = location.pathname.replace(/^\/(es|en)/, `/${code}`);
     i18n.changeLanguage(code);
-    navigate(newPath);
     handleClose();
   };
 
