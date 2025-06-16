@@ -1,19 +1,10 @@
-[{
-  "contacto": "Contact",
-  "enviar": "Send message",
-  "nombre": "Name",
-  "email": "Email",
-  "mensaje": "Message",
-  "empresa": "Company (optional)",
-  "descripcion": "Do you have a project or question? Fill out the form and we’ll get back to you shortly."
-},
 {
-    "home": "Home"
-},
-{
-    "services": "Services"
-},
-{
-    "faq": "FAQ"
+    "meta": {
+        "title": "Welcome to Trioptimo | Trioptimo",
+        "description": "We drive digital transformation in industrial companies.",
+        "keywords": "industry 4.0, automation, digital transformation"
+    },
+    "home": {
+        "heading": "Welcome to Trioptimo"
+    }
 }
-]

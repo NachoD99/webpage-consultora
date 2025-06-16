@@ -6,13 +6,16 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme/theme";
 import './i18n';
 import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <App />
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>

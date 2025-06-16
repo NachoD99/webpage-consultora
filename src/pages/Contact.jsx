@@ -14,9 +14,10 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 export default function Contacto() {
-  const { t } = useTranslation('contact');
+  const { t, i18n } = useTranslation('contact');
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Traducción nombre:", t("name"));
@@ -46,6 +47,14 @@ export default function Contacto() {
 
   return (
     <Box sx={{ backgroundColor: "transparent", py: 10 }}>
+      <Helmet key={i18n.language}>
+                <html lang={i18n.language} />
+                <title>{t('meta.title')}</title>
+                <meta name="description" content={t('meta.description')} />
+                <meta name="keywords" content={t('meta.keywords')} />
+                <meta property="og:title" content={t('meta.title')} />
+                <meta property="og:description" content={t('meta.description')} />
+            </Helmet>
       <Container maxWidth="sm">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

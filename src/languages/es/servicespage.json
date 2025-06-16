@@ -18,5 +18,13 @@
       "title": "Gemelos Digitales",
       "description": "Simulamos virtualmente tu planta en tiempo real."
     }
-  ]
+  ],
+    "meta": {
+        "title": "Servicios | Trioptimo",
+        "description": "Impulsamos la transformación digital en empresas industriales.",
+        "keywords": "industria 4.0, automatización, transformación digital"
+    },
+    "home": {
+        "heading": "Bienvenido a Trioptimo"
+    }
 }

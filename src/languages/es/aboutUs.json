@@ -26,5 +26,13 @@
       "role": "COO y Cofundadora",
       "bio": "Especialista en operaciones industriales. Garantiza la eficiencia y calidad en cada etapa del proyecto."
     }
-  ]
+  ],
+  "meta": {
+    "title": "Sobre nosotros | Trioptimo",
+    "description": "Impulsamos la transformación digital en empresas industriales.",
+    "keywords": "industria 4.0, automatización, transformación digital"
+  },
+  "home": {
+    "heading": "Bienvenido a Trioptimo"
+  }
 }

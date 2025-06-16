@@ -18,5 +18,13 @@
       "title": "Digital Twins",
       "description": "We simulate your plant virtually in real time."
     }
-  ]
+  ],
+  "meta": {
+    "title": "Services | Trioptimo",
+    "description": "We drive digital transformation in industrial companies.",
+    "keywords": "industry 4.0, automation, digital transformation"
+  },
+  "home": {
+    "heading": "Welcome to Trioptimo"
+  }
 }
