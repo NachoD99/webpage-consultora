@@ -20,15 +20,15 @@ export default function Contacto() {
   const { t, i18n } = useTranslation('contact');
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Traducción nombre:", t("name"));
 
     const formData = new FormData(e.target);
     const data = {
-      nombre: formData.get('nombre'),
+      name: formData.get('name'),
       email: formData.get('email'),
-      empresa: formData.get('empresa'),
-      mensaje: formData.get('mensaje'),
+      company: formData.get('company'),
+      message: formData.get('message'),
     };
+
 
     try {
       const res = await fetch("https://mail-sender-0dt2.onrender.com/api/contact", {
@@ -44,7 +44,7 @@ export default function Contacto() {
       alert("Error al enviar el mensaje.");
     }
   };
-  
+
   useMetaTags({
     title: t("meta.title"),
     description: t("meta.description"),
