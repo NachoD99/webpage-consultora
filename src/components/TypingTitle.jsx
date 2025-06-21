@@ -4,18 +4,19 @@ import { useTranslation } from "react-i18next";
 
 const TypingTitle = () => {
   const { t } = useTranslation("hero");
-  const fullText = t("title2"); // El texto con efecto
-  const [typedText, setTypedText] = useState("");
+  // const fullText = t("title2"); // El texto con efecto
+  // const [typedText, setTypedText] = useState("");
 
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      setTypedText((prev) => prev + fullText.charAt(index));
-      index++;
-      if (index >= fullText.length) clearInterval(interval);
-    }, 120); // velocidad del typing
-    return () => clearInterval(interval);
-  }, [fullText]);
+  // useEffect(() => {
+  //   if (!fullText) return;
+  //   let index = 0;
+  //   const interval = setInterval(() => {
+  //     setTypedText((prev) => prev + fullText.charAt(index));
+  //     index++;
+  //     if (index >= fullText.length) clearInterval(interval);
+  //   }, 120); // velocidad del typing
+  //   return () => clearInterval(interval);
+  // }, [fullText]);
 
   return (
     <Box
@@ -50,7 +51,8 @@ const TypingTitle = () => {
           WebkitTextFillColor: "transparent",
         }}
       >
-        {typedText}
+        {/* {typedText} */}
+         {t("title2")}
       </Typography>
     </Box>
   );

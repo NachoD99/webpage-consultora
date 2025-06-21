@@ -37,8 +37,7 @@ export default function Contacto() {
         body: JSON.stringify(data),
       });
 
-      const result = await res.json();
-      alert(result.mensaje);
+      alert("¡Mensaje enviado exitosamente!");
       e.target.reset();
     } catch (err) {
       alert("Error al enviar el mensaje.");
@@ -149,7 +148,7 @@ export default function Contacto() {
             </IconButton>
             <IconButton
               component="a"
-              href="mailto:contacto@tuempresa.com"
+              href="mailto:info@trioptimo.com"
               sx={{ color: 'primary.main' }}
             >
               <EmailIcon />
