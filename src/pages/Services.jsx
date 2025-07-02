@@ -49,7 +49,7 @@ export default function Services() {
   });
 
   return (
-    <Box sx={{ backgroundColor: 'transparent', py: 10 }}>
+    <Box sx={{ backgroundColor: 'white', py: 10 }}>
       <Container>
         <motion.div
           initial={{ opacity: 0, y: -20 }}

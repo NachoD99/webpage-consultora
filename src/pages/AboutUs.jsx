@@ -33,7 +33,7 @@ export default function About() {
       });
 
     return (
-        <Box sx={{ py: 10, backgroundColor: 'transparent' }}>
+        <Box sx={{ py: 10, backgroundColor: 'white' }}>
             <Container maxWidth="md">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}

@@ -35,7 +35,7 @@ export default function Servicios() {
   const { t } = useTranslation('services');
 
   return (
-    <Box sx={{ py: 8, px: 2, backgroundColor: "transparent" }}>
+    <Box sx={{ py: 8, px: 2, backgroundColor: "white" }}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -74,7 +74,6 @@ export default function Servicios() {
               left: 0,
               width: '100vw',
               height: '100vh',
-              backdropFilter: 'blur(12px)',
               zIndex: 10,
               pointerEvents: 'none',
             }}
@@ -102,7 +101,6 @@ export default function Servicios() {
             <Card
               elevation={hoveredIndex === index ? 12 : 6}
               sx={{
-                backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.25), transparent 70%)`,
                 backgroundColor: 'background.paper',
                 border: '1px solid rgba(0,191,255)',
                 color: 'text.primary',
@@ -115,7 +113,7 @@ export default function Servicios() {
                 textAlign: 'center',
                 p: 3,
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                transform: hoveredIndex === index ? 'scale(1.35)' : 'scale(1)',
+                transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)',
                 zIndex: hoveredIndex === index ? 100 : 20,
               }}
             >

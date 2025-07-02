@@ -7,8 +7,6 @@ import Services from './pages/Services';
 import AboutUs from './pages/AboutUs';
 import Faq from './pages/Faq';
 import Home from './pages/Home';
-import GlobalBackground from './components/GlobalBackground';
-import VantaBackground from "./components/VantaBackground";
 import { initGA } from './services/analytics';
 
 function AppWrapper() {
@@ -19,8 +17,6 @@ function AppWrapper() {
 
   return (
     <Layout>
-      <GlobalBackground />
-      <VantaBackground />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />

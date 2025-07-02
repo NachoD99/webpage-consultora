@@ -12,7 +12,6 @@ export default function Footer() {
         color: 'text.secondary',
         py: 6,
         px: 2,
-        mt: 10,
       }}
     >
       <Container maxWidth="lg">

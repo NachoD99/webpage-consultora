@@ -56,7 +56,7 @@ export default function Faq() {
   });
 
     return (
-        <Box sx={{ backgroundColor: 'transparent', py: 10 }}>
+        <Box sx={{ backgroundColor: 'white', py: 10 }}>
             <Container maxWidth="md">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}

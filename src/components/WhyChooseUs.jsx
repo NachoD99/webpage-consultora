@@ -34,7 +34,7 @@ export default function PorQueElegirnos() {
   const { t } = useTranslation('whychooseus');
 
   return (
-    <Box sx={{ py: 8, px: 2, backgroundColor: "transparent", position: 'relative' }}>
+    <Box sx={{ py: 8, px: 2, backgroundColor: "white", position: 'relative', minHeight:"20vh" }}>
       <Box display={"flex"}
         flexDirection={"row"}
         alignItems={"center"}
@@ -72,7 +72,6 @@ export default function PorQueElegirnos() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backdropFilter: 'blur(6px)',
             zIndex: 10,
             pointerEvents: 'none',
           }}
@@ -115,7 +114,7 @@ export default function PorQueElegirnos() {
                 textAlign: 'center',
                 p: 3,
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                transform: hoveredIndex === index ? 'scale(1.35)' : 'scale(1)',
+                transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)',
                 zIndex: hoveredIndex === index ? 100 : 20,
               }}
             >

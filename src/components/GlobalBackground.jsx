@@ -18,7 +18,7 @@ export default function GlobalBackground() {
           width: 600,
           height: 600,
           borderRadius: '50%',
-          background: 'radial-gradient(circle at center, #00bfff, #0a0f1c)',
+          background: 'radial-gradient(circle, rgb(255, 255, 255), rgb(158, 68, 32), rgb(106, 36, 161), rgb(0, 25, 255));',
           filter: 'blur(150px)',
           top: '20%',
           left: '50%',
