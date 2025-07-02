@@ -14,7 +14,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { useMetaTags } from "../services/useMetaTags";
+import { useMetaTags } from "../../services/useMetaTags";
 
 export default function Contacto() {
   const { t, i18n } = useTranslation('contact');

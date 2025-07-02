@@ -13,7 +13,7 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { useMetaTags } from "../services/useMetaTags";
+import { useMetaTags } from "../../services/useMetaTags";
 
 export default function About() {
     const { t, i18n } = useTranslation('aboutUs');

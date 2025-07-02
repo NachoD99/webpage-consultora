@@ -22,7 +22,7 @@ import EngineeringIcon from '@mui/icons-material/Engineering';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useMetaTags } from "../services/useMetaTags";
+import { useMetaTags } from "../../services/useMetaTags";
 
 const faqs = [
     {

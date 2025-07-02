@@ -21,7 +21,7 @@ import InsightsIcon from '@mui/icons-material/Insights';
 import SensorsIcon from '@mui/icons-material/Sensors';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { useMetaTags } from "../services/useMetaTags";
+import { useMetaTags } from "../../services/useMetaTags";
 
 const servicios = [
   {

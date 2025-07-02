@@ -1,4 +1,4 @@
-import Footer from '../components/Footer';
+import Footer from './components/Footer';
 import { Menu, MenuItem } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useTranslation } from 'react-i18next';
