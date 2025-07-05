@@ -27,16 +27,13 @@ export default function Layout({ children }) {
   return (
     <>
       <AppBar
-        position="sticky"
+        position="relative"
         elevation={0}
         sx={{
-          mt: isMobile ? 0 : '30px',
+          my: isMobile ? 0 : 1,
           mx: isMobile ? 0 : 'auto',
-          width: isMobile ? '100%' : '50%',
-          borderRadius: isMobile ? 0 : '30px',
-          backdropFilter: 'blur(10px)',
-          backgroundImage: isMobile ? 0 : `radial-gradient(ellipse at top, rgba(0,191,255,0.25), transparent 70%)`,
-          backgroundColor: isMobile ? 'transparent' : 'rgba(43, 43, 92, 0.5)'
+          width: isMobile ? '100%' : '80%',
+          backgroundColor: 'transparent'
         }}
       >
         <Container maxWidth="lg">
@@ -50,7 +47,6 @@ export default function Layout({ children }) {
                 textDecoration: 'none',
                 fontWeight: 700,
                 fontSize: '1.25rem',
-                background: (theme) => theme.palette.text.primary, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'
               }}
             >
               {t('title')}

@@ -22,7 +22,7 @@ export default function Hero() {
     >
 
       <GlobalBackground />
-      <VantaBackground />
+      {/* <VantaBackground /> */}
       <Stack spacing={4} sx={{ mx: 'auto', color: 'text.secondary' }}>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
