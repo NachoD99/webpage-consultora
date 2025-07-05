@@ -31,6 +31,7 @@ const TypingTitle = () => {
       <Typography
         variant="h1"
         fontWeight={500}
+        color="text.primary"
         sx={{
           fontSize: { xs: "4rem", md: "12.5rem" },
           mb: 0,

@@ -32,14 +32,20 @@ export default function Hero() {
           <TypingTitle />
           <Typography
             variant="subtitle1"
-            sx={{ mx: 'auto', width: { xs: "380px", md: "1000px" }, fontSize: { xs: "1rem", md: "1.5rem" }, my: 6, color: 'text.secondary' }}
+            sx={{ mx: 'auto', width: { xs: "380px", md: "1000px" }, fontSize: { xs: "1rem", md: "1.5rem" }, my: 6, color: 'text.primary' }}
           >
-            {t("description")}
+            {t("description1")}
           </Typography>
-
+          <Typography
+            variant="subtitle2"
+            sx={{ mx: 'auto', width: { xs: "380px", md: "1000px" }, fontSize: { xs: "1rem", md: "1rem" }, my: 6, color: 'text.tertiary' }}
+          >
+            {t("description2")}
+          </Typography>
           <Button
             variant="contained"
             size="large"
+            href="/contact"
             sx={{
               px: 5,
               py: 1.5,

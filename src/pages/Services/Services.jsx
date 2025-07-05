@@ -49,7 +49,7 @@ export default function Services() {
   });
 
   return (
-    <Box sx={{ backgroundColor: 'white', py: 10 }}>
+    <Box sx={{ backgroundColor: 'background.pages', py: 10 }}>
       <Container>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -69,9 +69,9 @@ export default function Services() {
               mr={2}
               color="text.secondary"
             >
-              {t('title1')}
+              {t('title')}
             </Typography>
-            <Typography
+            {/* <Typography
               variant="h4"
               align="center"
               fontWeight={700}
@@ -79,7 +79,7 @@ export default function Services() {
               sx={{ background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
             >
               {t('title2')}
-            </Typography>
+            </Typography> */}
           </Box>
 
           <Typography
@@ -104,7 +104,7 @@ export default function Services() {
             >
               <TimelineItem key={index}>
                 <TimelineOppositeContent
-                  sx={{ color: 'text.primary' }}
+                  sx={{ color: 'text.secondary' }}
                   variant="body2"
                 >
                   {t(`items.${index}.title`)}
@@ -120,13 +120,12 @@ export default function Services() {
                     elevation={4}
                     sx={{
                       p: 2,
-                      backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.35), transparent 80%)`,
                       backgroundColor: 'background.paper',
                       border: '1px solid rgba(0,191,255)',
                       color: 'text.primary',
                     }}
                   >
-                    <Typography variant="subtitle1" fontWeight="bold">
+                    <Typography variant="subtitle1" color="text.secondary" fontWeight="bold">
                       {t(`items.${index}.title`)}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">

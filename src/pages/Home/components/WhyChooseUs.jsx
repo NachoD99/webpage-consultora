@@ -34,7 +34,7 @@ export default function PorQueElegirnos() {
   const { t } = useTranslation('whychooseus');
 
   return (
-    <Box sx={{ py: 8, px: 2, backgroundColor: "white", position: 'relative', minHeight:"20vh" }}>
+    <Box sx={{ py: 8, px: 2, backgroundColor: "background.pages", position: 'relative', minHeight:"20vh" }}>
       <Box display={"flex"}
         flexDirection={"row"}
         alignItems={"center"}
@@ -48,9 +48,9 @@ export default function PorQueElegirnos() {
           mr={2}
           color="text.secondary"
         >
-          {t('title_part1')}
+          {t('title')}
         </Typography>
-        <Typography
+        {/* <Typography
           variant="h4"
           align="center"
           fontWeight={700}
@@ -61,7 +61,7 @@ export default function PorQueElegirnos() {
         </Typography>
         <Typography variant="h4" align="center" color="text.secondary" fontWeight={700} mb={6}>
           {t('title_part3')}
-        </Typography>
+        </Typography> */}
       </Box>
       {/* Blur overlay */}
       {hoveredIndex !== null && (
@@ -101,7 +101,6 @@ export default function PorQueElegirnos() {
             <Card
               elevation={hoveredIndex === index ? 12 : 6}
               sx={{
-                backgroundImage: `radial-gradient(ellipse at bottom, rgba(0,191,255,0.35), transparent 80%)`,
                 backgroundColor: 'background.paper',
                 border: '1px solid rgba(0,191,255)',
                 color: 'text.primary',
@@ -130,7 +129,7 @@ export default function PorQueElegirnos() {
                 {razon.icon}
               </Avatar>
               <CardContent>
-                <Typography variant="h6" fontWeight={600} gutterBottom>
+                <Typography variant="h6" fontWeight={600} color="text.secondary" gutterBottom>
                   {t(`reasons.${index}.title`)}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">

@@ -35,7 +35,7 @@ export default function Servicios() {
   const { t } = useTranslation('services');
 
   return (
-    <Box sx={{ py: 8, px: 2, backgroundColor: "white" }}>
+    <Box sx={{ py: 8, px: 2, backgroundColor: "background.pages" }}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -54,9 +54,9 @@ export default function Servicios() {
             mr={2}
             color="text.secondary"
           >
-            {t('title1')}
+            {t('title')}
           </Typography>
-          <Typography
+          {/* <Typography
             variant="h4"
             align="center"
             fontWeight={700}
@@ -64,7 +64,7 @@ export default function Servicios() {
             sx={{ background: (theme) => theme.palette.primary.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
           >
             {t('title2')}
-          </Typography>
+          </Typography> */}
         </Box>
         {hoveredIndex !== null && (
           <Box
@@ -130,7 +130,7 @@ export default function Servicios() {
                 >
                   {servicio.icon}
                 </Avatar>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h6" color="text.secondary" gutterBottom>
                   {t(`items.${index}.title`)}
                 </Typography>
                 {/* <Typography variant="body2" color="text.secondary">
